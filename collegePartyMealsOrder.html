@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Apel Collège Saint-Benoît - inscription repas fête du collège 2023</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+          crossorigin="anonymous">
+    <link href="collegePartyMealsOrder.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h1 class="display-2">Réservation de repas</h1>
+    <div id="indentitySubmitButton" class="row mt-5">
+        <div class="col-6 col-lg-3">
+            <button type="button" class="btn btn-secondary" id="referentParent-section-button"
+                    name="referentParent-section-button" tabindex="-1" disabled>1 ⋅ Adulte référent</button>
+        </div>
+        <div class="col-6 col-lg-3">
+            <button type="button" class="btn btn-secondary" id="help-section-button"
+                    name="help-section-button" tabindex="-1">2 ⋅ Accompagnant</button>
+        </div>
+        <div class="col-6 col-lg-3">
+            <button type="button" class="btn btn-secondary" id="help-section-button"
+                    name="help-section-button" tabindex="-1">3 ⋅ Aide</button>
+        </div>
+        <div class="col-6 col-lg-3">
+            <button type="button" class="btn btn-secondary" id="meals-section-button"
+                    name="meals-section-button" tabindex="-1">4 ⋅ Repas</button>
+        </div>
+    </div>
+    <form action="#" method="post" autocomplete="off" id="collegePartyMealsOrderForm">
+        <div class="mt-4" id="referentParent">
+            <h6>Le parent référent</h6>
+            <div class="underline"></div>
+            <div class="content-container">
+                <div class="row">
+                    <div id="referentParentLastName" class="validated-input align-items-center col-12 col-lg-6">
+                        <label for="referentParentLastNameInput" class="form-label">Prénom</label>
+                        <input type="text" class="form-control" id="referentParentLastNameInput" name="referentParentLastNameInput"
+                               pattern="[a-zA-Z-_ ]{2,80}" autofocus />
+                        <span for="referentParentLastNameInput" class="form-text error-message alert" id="referentParentLastNameInputMsg">
+                            Le prénom est un champ obligatoire à renseigner.</span></div>
+                    <div id="firstname" class="validated-input align-items-center col-12 col-lg-6">
+                        <label for="referentParentFirstNameInput" class="form-label">Nom</label>
+                        <input type="text" class="form-control" id="referentParentFirstNameInput" name="referentParentFirstNameInput"
+                               pattern="[a-zA-Z'-_ ]{2,80}" />
+                        <span for="referentParentFirstNameInput" class="form-text" id="referentParentFirstNameInputMsg"
+                              name="referentParentFirstNameInputMsg">
+                            Le nom est un champ obligatoire à renseigner.
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="referentParentPhone" class="validated-input align-items-center col-12 col-lg-6">
+                        <label for="referentParentPhoneInput" class="form-label">Numéro de mobile</label>
+                        <input type="tel" class="form-control" id="referentParentPhoneInput"
+                               name="referentParentPhoneInput" pattern="0[1-79]{1}\s\d{2}\s\d{2}\s\d{2}\s\d{2}"
+                               maxlength=14" placeholder="06 12 34 56 78" onkeyup="validatePhoneNumberFormat(this,2)" />
+                        <span for="referentParentPhoneInput" class="form-text">Le numéro doit respecter le format 0X XX XX XX XX.</span>
+                    </div>
+                    <div id="referentParentEmail" class="validated-input align-items-center col-12 col-lg-6">
+                        <label for="referentParentEmailInput" class="form-label">Adresse e-mail</label>
+                        <input type="email" class="form-control" id="referentParentEmailInput"
+                               name="referentParentEmailInput" />
+                        <span for="referentParentEmailInput" class="form-text">L'adresse doit respecter le format abc@exemple.com.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <div>-->
+<!--            <h6 class="mt-4">L'adulte responsable présent</h6>-->
+<!--            <div class="underline"></div>-->
+<!--            <div class="content-container">-->
+<!--                <div class="form-check form-switch">-->
+<!--                    <input class="form-check-input" type="checkbox" value="" id="otherResponsableAdultCheckbox">-->
+<!--                    <label class="form-check-label mt-0" for="otherResponsableAdultCheckbox">Un autre adulte accompagnera mon⋅es enfant⋅s</label>-->
+<!--                </div>-->
+<!--                <div id="otherResponsableAdult">-->
+<!--                    <div class="row">-->
+<!--                        <div id="otherResponsablefirstAdultName" class="align-items-center col-12 col-lg-6">-->
+<!--                            <label for="otherResponsableAdultFirstNameInput" class="form-label">Prénom</label>-->
+<!--                            <input type="text" class="form-control" id="otherResponsableAdultFirstNameInput"-->
+<!--                                   name="otherResponsableAdultFirstNameInput" pattern="[a-zA-Z-_ ]{2,80}" />-->
+<!--                            <span for="otherResponsableAdultFirstNameInput" class="form-text">-->
+<!--                                Le prénom est un champ obligatoire à renseigner.</span>-->
+<!--                        </div>-->
+<!--                        <div id="otherResponsableAdultName" class="align-items-center col-12 col-lg-6">-->
+<!--                            <label for="otherResponsableAdultNameInput" class="form-label">Nom</label>-->
+<!--                            <input type="text" class="form-control" id="otherResponsableAdultNameInput"-->
+<!--                                   name="otherResponsableAdultNameInput" pattern="[a-zA-Z-_ ]{2,80}" />-->
+<!--                        </div>-->
+<!--                        <span for="otherResponsableAdultNameInput" class="form-text">-->
+<!--                        Le nom est un champ obligatoire à renseigner.</span>-->
+<!--                    </div>-->
+<!--                    <div class="row">-->
+<!--                        <div id="otherResponsableAdultMobile" class="align-items-center col-12 col-lg-6">-->
+<!--                            <label for="otherResponsableAdultMobileInput" class="form-label">Numéro de téléphone portable</label>-->
+<!--                            <input type="tel" class="form-control" id="otherResponsableAdultMobileInput"-->
+<!--                                   name="otherResponsableAdultMobileInput" pattern="0[6-79]{1}\s\d{2}\s\d{2}\s\d{2}\s\d{2}"-->
+<!--                                   onkeyup="phoneNumberFormat(this)" />-->
+<!--                            <span for="otherResponsableAdultMobileInput" class="form-text">-->
+<!--                                Le numéro doit respecter le format 0X XX XX XX XX.</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+        <div id="indentitySubmitButton" class="d-flex justify-content-end">
+            <button type="button" class="btn btn-primary mx-3" id="identitySubmit" name="back" disabled>Retour</button>
+            <button type="submit" class="btn btn-primary" id="identitySubmit" name="identitySubmit">Valider l'identitée</button>
+        </div>
+    </form>
+</div>
+<script src="collegePartyMealsOrderTreatment.js"></script>
+</body>
+</html>

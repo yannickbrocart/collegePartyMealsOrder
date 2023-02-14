@@ -1,0 +1,159 @@
+:root {
+    font-size: 16px;
+    --darkblue: #003970;
+    --middledarkblue: #005499;
+    --blue: #219CD7;
+    --lightblue: #29C3FF;
+    --ultralightblue: #B3E0FF;
+    --red: #EE3350;
+    --green: #8AC640;
+    --indigo: #B24198;
+    --gray : #C1C1C1;
+    --lightgray : #E0E0E0;
+}
+
+body {
+    background-color: var(--lightgray);
+    color: var(--darkblue);
+}
+
+h6 {
+    margin-bottom: .2rem;
+    text-transform: uppercase;
+}
+
+.underline {
+    width:58px;
+    border-bottom:4px solid var(--blue);
+    margin-bottom: 1rem;
+}
+
+.blue {
+    color: var(--blue);
+}
+
+/*--------------------------------------------------------------
+    FORMS
+--------------------------------------------------------------*/
+
+.content-container {
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.form-control, .form-control:focus {
+    box-sizing: border-box;
+    border: .1rem solid var(--lightgray);
+}
+
+.error{
+    /*font-weight: bold;*/
+    color: var(--red);
+}
+
+
+/*.validated-input {*/
+/*    position: relative;*/
+/*}*/
+
+/*.form-control:valid, .form-control:valid:hover, .form-control:valid:focus {*/
+/*    border-bottom: .1rem solid var(--green);*/
+/*}*/
+
+/*.form-control:invalid, .form-control:invalid:hover {*/
+/*    border-bottom: .1rem solid var(--red);*/
+/*    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;*/
+/*}*/
+
+/*.form-control:hover, .form-control:focus, .form-control:invalid:placeholder-shown:hover {*/
+/*    border-bottom: .1rem dashed var(--blue);*/
+/*    box-shadow: none;*/
+/*}*/
+
+/*.form-control:invalid:placeholder-shown  {*/
+/*    border-bottom: .1rem dashed transparent;*/
+/*}*/
+
+/*.form-control:valid + span:after {*/
+/*    position: absolute;*/
+/*    content: 'O';*/
+/*    top: 3.75rem;*/
+/*    right: 1.25rem;*/
+/*    color: var(--green);*/
+/*}*/
+
+/*.form-control:invalid + span:after {*/
+/*    position: absolute;*/
+/*    content: 'X';*/
+/*    top: 3.75rem;*/
+/*    right: 1.25rem;*/
+/*    color: var(--red);*/
+/*}*/
+
+label {
+    margin-top: 1.25rem;
+    font-weight: 500  ;
+    line-height: .75rem;
+    color: var(--middledarkblue);
+}
+
+.form-check-input:checked {
+    background-color: var(--blue);
+}
+
+input::placeholder {
+    color: var(--gray)!important;
+}
+
+/*--------------------------------------------------------------
+    BUTTONS
+--------------------------------------------------------------*/
+
+.btn-primary {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    margin-top: 2rem;
+    padding: .5rem 2rem;
+}
+
+.btn-primary:disabled {
+    background-color: var(--gray);
+    border-color: var(--gray);
+}
+
+.btn-secondary {
+    background-color: var(--gray);
+    border-color: var(--gray);
+    margin-top: .3rem;
+    width: 100%;
+    text-transform: uppercase;
+    /*padding: .5rem;*/
+}
+
+.btn-secondary:disabled {
+    background-color: var(--darkblue);
+    border-color: var(--bdarklue);
+    /*color: var(--ultralightblue);*/
+}
+
+
+
+
+
+input:invalid {
+    border: 1px solid red;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.icon.icon-error {
+    stroke: red;
+}
+
