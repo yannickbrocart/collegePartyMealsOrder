@@ -133,7 +133,7 @@ input::placeholder {
 
 .btn-secondary:disabled {
     background-color: var(--darkblue);
-    border-color: var(--bdarklue);
+    border-color: var(--darkblue);
     /*color: var(--ultralightblue);*/
 }
 
