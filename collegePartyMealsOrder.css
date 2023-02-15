@@ -32,12 +32,16 @@ h6 {
     color: var(--blue);
 }
 
+.hidden {
+    display: none;
+}
+
 /*--------------------------------------------------------------
     FORMS
 --------------------------------------------------------------*/
 
 .content-container {
-    background-color: #fff;
+    background-color: #eee;
     border-radius: .5rem;
     padding: 0 1.5rem 1.5rem 1.5rem;
 }
@@ -47,49 +51,31 @@ h6 {
     border: .1rem solid var(--lightgray);
 }
 
-.error{
-    /*font-weight: bold;*/
-    color: var(--red);
+.validated-input {
+    position: relative;
 }
 
+.icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 3em;
+    right: 1.25em;
+    pointer-events: none;
+    z-index: 2;
+}
 
-/*.validated-input {*/
-/*    position: relative;*/
-/*}*/
+.icon.icon-success {
+    stroke: var(--green);
+}
 
-/*.form-control:valid, .form-control:valid:hover, .form-control:valid:focus {*/
-/*    border-bottom: .1rem solid var(--green);*/
-/*}*/
+.icon.icon-error {
+    stroke: var(--red);
+}
 
-/*.form-control:invalid, .form-control:invalid:hover {*/
-/*    border-bottom: .1rem solid var(--red);*/
-/*    transition: box-shadow .3s, border .3s, -webkit-box-shadow .3s;*/
-/*}*/
-
-/*.form-control:hover, .form-control:focus, .form-control:invalid:placeholder-shown:hover {*/
-/*    border-bottom: .1rem dashed var(--blue);*/
-/*    box-shadow: none;*/
-/*}*/
-
-/*.form-control:invalid:placeholder-shown  {*/
-/*    border-bottom: .1rem dashed transparent;*/
-/*}*/
-
-/*.form-control:valid + span:after {*/
-/*    position: absolute;*/
-/*    content: 'O';*/
-/*    top: 3.75rem;*/
-/*    right: 1.25rem;*/
-/*    color: var(--green);*/
-/*}*/
-
-/*.form-control:invalid + span:after {*/
-/*    position: absolute;*/
-/*    content: 'X';*/
-/*    top: 3.75rem;*/
-/*    right: 1.25rem;*/
-/*    color: var(--red);*/
-/*}*/
+.error-message {
+    /*font-size: 0.85rem;*/
+}
 
 label {
     margin-top: 1.25rem;
@@ -105,6 +91,15 @@ label {
 input::placeholder {
     color: var(--gray)!important;
 }
+
+.form-control.input-error {
+    border: 1.5px solid var(--red);
+}
+
+.form-control.input-error:focus {
+    border: 1.5px solid var(--red);
+}
+
 
 /*--------------------------------------------------------------
     BUTTONS
@@ -136,24 +131,3 @@ input::placeholder {
     border-color: var(--darkblue);
     /*color: var(--ultralightblue);*/
 }
-
-
-
-
-
-input:invalid {
-    border: 1px solid red;
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    position: relative;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.icon.icon-error {
-    stroke: red;
-}
-

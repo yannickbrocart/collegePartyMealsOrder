@@ -20,8 +20,9 @@ class FormValidator {
 
     validateFields(field) {
         if (field.value.trim() === "") {
+            this.setStatus(field, `Le champs ${field.previousElementSibling.innerText} ne peut être vide`, "error");
         } else {
-
+            this.setStatus(field, null, "success");
         }
 
         if (field.type === "email") {
@@ -31,6 +32,24 @@ class FormValidator {
             } else {
                 console.log('no');
             }
+        }
+    }
+
+    setStatus(field, message, status) {
+        const successIcon = field.parentElement.querySelector('.icon-success');
+        const errorIcon = field.parentElement.querySelector('.icon-error');
+        const errorMessage = field.parentElement.querySelector('.error-message');
+        if (status === "success") {
+            if (errorIcon) { errorIcon.classList.add('hidden') }
+            // if (errorMessage) { errorMessage.innerText = "" }
+            successIcon.classList.remove('hidden')
+            field.classList.remove('input-error')
+        }
+        if (status === "error") {
+            if (successIcon) { successIcon.classList.add('hidden') }
+            // field.parentElement.querySelector('.error-message').innerText = message
+            errorIcon.classList.remove('hidden')
+            field.classList.add('input-error')
         }
     }
 }
