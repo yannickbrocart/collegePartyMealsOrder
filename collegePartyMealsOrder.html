@@ -29,7 +29,7 @@
                     name="meals-section-button" tabindex="-1">4 ⋅ Repas</button>
         </div>
     </div>
-    <form action="#" method="post" autocomplete="off" id="collegePartyMealsOrderForm">
+    <form action="collegePartyMealsOrderTreatment.php" method="post" autocomplete="off" id="collegePartyMealsOrderForm">
         <div class="mt-4" id="referentParent">
             <h6>Le parent référent</h6>
             <div class="underline"></div>
@@ -39,8 +39,8 @@
                         <label for="referentParentLastNameInput" class="form-label">Prénom</label>
                         <input type="text" class="form-control" id="referentParentLastNameInput" name="referentParentLastNameInput"
                                pattern="[a-zA-Z-_ ]{2,80}" autofocus />
-                        <span for="referentParentLastNameInput" class="form-text error-message" id="referentParentLastNameInputMsg">
-                            Le prénom est un champ obligatoire à renseigner.</span>
+                        <span for="referentParentLastNameInput" class="form-text " id="referentParentLastNameInputMsg">
+                            Le prénom doit contenir de 2 à 80 caractères.</span>
                         <svg class="icon icon-success hidden" xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>check-circle</title><g fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                         <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>exclamation-circle</title><g fill="none"><path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                     </div>
@@ -48,9 +48,9 @@
                         <label for="referentParentFirstNameInput" class="form-label">Nom</label>
                         <input type="text" class="form-control" id="referentParentFirstNameInput" name="referentParentFirstNameInput"
                                pattern="[a-zA-Z'-_ ]{2,80}" />
-                        <span for="referentParentFirstNameInput" class="form-text error-message" id="referentParentFirstNameInputMsg"
+                        <span for="referentParentFirstNameInput" class="form-text " id="referentParentFirstNameInputMsg"
                               name="referentParentFirstNameInputMsg">
-                            Le nom est un champ obligatoire à renseigner.
+                            Le nom doit contenir de 2 à 80 caractères.
                         </span>
                         <svg class="icon icon-success hidden" xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>check-circle</title><g fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                         <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>exclamation-circle</title><g fill="none"><path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
@@ -62,7 +62,7 @@
                         <input type="tel" class="form-control" id="referentParentPhoneInput"
                                name="referentParentPhoneInput" pattern="0[1-79]{1}\s\d{2}\s\d{2}\s\d{2}\s\d{2}"
                                maxlength=14" placeholder="06 12 34 56 78" onkeyup="validatePhoneNumberFormat(this,2)" />
-                        <span for="referentParentPhoneInput" class="form-text error-message">Le numéro doit respecter le format 0X XX XX XX XX.</span>
+                        <span for="referentParentPhoneInput" class="form-text ">Le numéro doit respecter le format 0X XX XX XX XX.</span>
                         <svg class="icon icon-success hidden" xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>check-circle</title><g fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                         <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>exclamation-circle</title><g fill="none"><path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                     </div>
@@ -70,16 +70,14 @@
                         <label for="referentParentEmailInput" class="form-label">Adresse e-mail</label>
                         <input type="email" class="form-control" id="referentParentEmailInput"
                                name="referentParentEmailInput" />
-                        <span for="referentParentEmailInput" class="form-text error-message">L'adresse doit respecter le format abc@exemple.com.</span>
+                        <span for="referentParentEmailInput" class="form-text ">L'adresse doit respecter le format abc@exemple.com.</span>
                         <svg class="icon icon-success hidden" xmlns="https://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>check-circle</title><g fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                         <svg class="icon icon-error hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><title>exclamation-circle</title><g fill="none"><path d="M12 8v4m0 4h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></g></svg>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="form-text">En soumettant ce formulaire, vous acceptez que les informations saisies soient traitées pour permettre de vous recontacter.
-        Pour connaître et exercer vos droits, notamment de retrait de votre consentement à l'utilisation des données collectées
-            par ce formulaire, veuillez consulter notre politique de confidentialité.</div>
+
 
 <!--        <div>-->
 <!--            <h6 class="mt-4">L'adulte responsable présent</h6>-->
